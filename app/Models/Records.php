@@ -5,8 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Counties extends Model
+class Record extends Model
 {
-    use HasFactory;
-    protected $table = 'counties';
+    protected $table = 'records';
+
+    protected $fillable = [
+        'field1', 'field2',
+    ];
 }

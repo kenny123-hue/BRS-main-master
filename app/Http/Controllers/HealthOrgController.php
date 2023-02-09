@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 
 class HealthOrgController extends Controller
 {
-    protected $user, $loc, $my_class;
+    protected $user, $loc, $my_class, $org;
 
     public function __construct(UserService $user, LociService $loc, OrgService $org)
     {
@@ -56,7 +56,7 @@ public function store(Request $request)
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($_id)
+   /* public function show($_id)
     {
       $admins = User::bySchool($school_id)->where('role','admin')->get();
       return view('school.admin-list',compact('admins'));

@@ -8,6 +8,7 @@ use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\OrgController;
 use App\Http\Controllers\HealthOrgController;
+use App\Http\Controllers\RecordsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
@@ -123,6 +124,10 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
 	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
+	Route::get ('/record', [RecordsController::class, 'index']);
+	Route::get ('/record', [RecordsController::class, 'store']);
+
+
 
 	/*Route::post('/sendOtp', [
     'middleware' => 'checkSession',
